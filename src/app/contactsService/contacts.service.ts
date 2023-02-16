@@ -11,4 +11,7 @@ export class ContactsService {
   getContacts(){
        return this.httpClient.get(this.url);
   }
+  createContact(createResource: any){
+    return this.httpClient.post(this.url,createResource);
+  }
 }

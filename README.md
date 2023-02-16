@@ -59,3 +59,43 @@ HttpClient Methods options
 
 <img src= "./src/assets/images/json-contacts.jpeg">
 <img src= "./src/assets/images/Http-GET.jpeg">
+
+
+# HttpClient POST Method
+-Common POST Examples
+    . Login Form
+    . Create New User
+    . Contact Us
+    . WhereEver we want the data to be hidden and secured via forms
+
+. Making API calls to Submit the data is referred as POST method call
+. To make a call all we need is a endpoint or a API URL
+        . post('api-endpoint',data)
+. We can also pass various parameters as options to the POST call
+        . post('api-endpoint',data, {params: new HttpParams().set('id', '1')})
+. The respone type will be an observable
+
+<h3>How to use HttpClient POST method in 6 easy steps</h3>
+1. Import HttpClientModule in our App Module
+<br>
+2. Import HttpClient in our service or component wherever we are making the HTTP request
+        .It's good practice to have all HTTP calls in services
+        .Becomes reusable and easy to maintain code
+        .Easy to share between various components
+<br>
+3. Inject HttpClient in the constructor method of the class
+<br>
+4. Implement the POST method call
+<br>
+5. Import the Services into the required calling component class
+<br>
+6. Call the method to make the HTTP request
+
+HttpClient Methods options
+.Headers: is of type HttpHeaders
+.Params: is of type HttpParams
+
+- get a form data
+- Mock the form data
+- call the HTTP POST method
+- new resource created 

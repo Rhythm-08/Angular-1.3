@@ -15,5 +15,11 @@ export class ContactsComponent {
         this.contactList = data;
       });
   }
+  createContact(createResource: any){
+    this.contactsService.createContact(createResource).subscribe(
+      (data)=>{
+        console.log(data);
+      });
+  }
 
 }

@@ -5,3 +5,11 @@
   <li *ngFor="let contact of contactList">
     {{contact.firstName}}
   </li>
+
+<h3>Create New Contact</h3>
+
+<form #frm="ngForm" (ngSubmit)="createContact(frm.value)">
+    <input type="text" name="firstName" placeholder="FirstName" required ngModel>
+    <input type="text" name="lastName" placeholder="LastName" required ngModel>
+    <button class="btn btn-outline-warning" [disabled]="!frm.valid">Click to Enter</button>
+</form>

@@ -43,11 +43,16 @@ HttpClient Methods options
 
 <h3>How to use HttpClient GET method in 6 easy steps</h3>
 1. Import HttpClientModule in our App Module
+<br>
 2. Import HttpClient in our service or component wherever we are making the HTTP request
     .It's good practice to have all HTTP calls in services
     .Becomes reusable and easy to maintain code
     .Easy to share between various components
+<br>
 3. Inject HttpClient in the constructor method of the class
+<br>
 4. Implement the GET method call
+<br>
 5. Import the Services into the required calling component class
+<br>
 6. Call the method to make the HTTP request

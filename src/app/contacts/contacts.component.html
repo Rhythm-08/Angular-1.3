@@ -13,3 +13,14 @@
     <input type="text" name="lastName" placeholder="LastName" required ngModel>
     <button class="btn btn-outline-warning" [disabled]="!frm.valid">Click to Enter</button>
 </form>
+
+
+<h3>Change User Data </h3>
+<form #fm="ngForm" (ngSubmit)="updateContact(fm.value)">
+    <input type="number" name="ID" placeholder="Enter ID" ngModel>
+    <input type="text" name="firstName" placeholder="FirstName" ngModel>
+    <input type="text" name="lastName" placeholder="LastName" ngModel>
+    <button >Update Info</button>
+
+</form>
+

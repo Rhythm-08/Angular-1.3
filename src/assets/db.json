@@ -1,6 +1,8 @@
 {
-    "posts":[
-        {"id":1,"title":"json-server","author":"typicode"}
+    "contacts":[
+        {"id":1,"firstName":"Rhythm","lastName":"Sharma"},
+        {"id":2,"firstName":"Nilesh","lastName":"Bansal"},
+        {"id":3,"firstName":"Harshvir","lastName":"Thakur"}
     ],
     "comments":[
         {"id":1,"body":"some comment","postId":1}

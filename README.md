@@ -56,3 +56,6 @@ HttpClient Methods options
 5. Import the Services into the required calling component class
 <br>
 6. Call the method to make the HTTP request
+
+<img src= "./src/assets/images/json-contacts.jpeg">
+<img src= "./src/assets/images/Http-GET.jpeg">

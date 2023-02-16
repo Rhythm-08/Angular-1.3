@@ -31,5 +31,12 @@ export class ContactsComponent {
         console.log(data);
       });
   }
+  deleteContact(updateResource: any){
+    this.contactsService.deleteContact(updateResource.ID).subscribe(
+      (data)=>{
+        console.log(data);
+      });
+  }
+  
 
 }

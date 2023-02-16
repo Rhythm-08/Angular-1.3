@@ -128,3 +128,34 @@ HttpClient PUT Method options
 5. Import the Services into the required calling component class
 <br>
 6. Call the method to make the HTTP request
+
+# HttpClient DELETE Method
+Making API calls to Submit to "delete" the existing data is referred to as a DELETE method call
+To make a call all we need is a endpoint or a API URL
+    . delete('api-endpoint')
+We can also pass various parameters as options to the DELETE call
+    . delete('api-endpoint', {params: new HttpParams().set('id', '1')})
+We will use options to pass parameters like headers,params,responseType,withCredentials etc 
+    . delete('url',options:{headers:{},params:{}})
+The response type will be an observable
+
+HttpClient DELETE Method options
+.Headers: is of type HttpHeaders
+.Params: is of type HttpParams
+
+<h3>How to use HttpClient DELETE method in 6 easy steps</h3>
+1. Import HttpClientModule in our App Module
+<br>
+2. Import HttpClient in our service or component wherever we are making the HTTP request
+        .It's good practice to have all HTTP calls in services
+        .Becomes reusable and easy to maintain code
+        .Easy to share between various components
+<br>
+3. Inject HttpClient in the constructor method of the class
+<br>
+4. Implement the DELETE method call
+<br>
+5. Import the Services into the required calling component class
+<br>
+6. Call the method to make the HTTP request
+

@@ -1,10 +1,26 @@
 <p>contacts works!</p>
 
 <h4>List of Contacts</h4>
-<ul>
+<!-- <ul>
   <li *ngFor="let contact of contactList">
     {{contact.firstName}}
-  </li>
+  </li> -->
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contactList">
+        <th scope="row">{{contact.id}}</th>
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+      </tr>
+    </tbody>
+  </table>
 
 <h3>Create New Contact</h3>
 
@@ -21,6 +37,14 @@
     <input type="text" name="firstName" placeholder="FirstName" ngModel>
     <input type="text" name="lastName" placeholder="LastName" ngModel>
     <button >Update Info</button>
+
+</form>
+
+<h2>Delete Contact</h2>
+
+<form #flm="ngForm" (ngSubmit)="deleteContact(flm.value)">
+    <input type="number" name="ID" placeholder="Enter ID" ngModel>
+    <button >Delete Contact</button>
 
 </form>
 

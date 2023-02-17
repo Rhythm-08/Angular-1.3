@@ -8,8 +8,11 @@ export class ContactsService {
   constructor(private httpClient:HttpClient) { } 
   url = 'http://localhost:3000/contacts';
 //GET http method is working for you
+  arr:any;
   getContacts(){
+        this.arr = this.httpClient.get(this.url);
        return this.httpClient.get(this.url);
+
   }
   createContact(createResource: any){
     return this.httpClient.post(this.url,createResource);

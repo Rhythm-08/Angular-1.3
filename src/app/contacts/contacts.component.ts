@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppModule } from '../app.module';
 import {ContactsService} from '../contactsService/contacts.service';
 @Component({
   selector: 'app-contacts',
@@ -7,17 +8,25 @@ import {ContactsService} from '../contactsService/contacts.service';
 })
 export class ContactsComponent {
     msg=false;
-  constructor(private contactsService:ContactsService) { }
-  contactList:any;
+  constructor(private contactsService:AppModule) { }
+   contactList:any=[];
   ngOnInit(): void {
-    this.contactList = this.contactsService.getContacts().subscribe(
-      (data)=>{
-        this.contactList = data;
-      });
+     this.contactsService.fresh.getContacts().subscribe(
+      (result)=>{
+        this.contactList = result;
+      },
+      (error)=>{
+        console.error(error);
+      }
+      );
   }
   createContact(createResource: any){
-    this.contactsService.createContact(createResource).subscribe(
+    this.contactsService.fresh.createContact(createResource).subscribe(
       (data)=>{
+         this.contactsService.fresh.getContacts().subscribe(
+          (data)=>{
+            this.contactList = data;
+          });
         console.log(data);
       });
   }
@@ -26,14 +35,23 @@ export class ContactsComponent {
     const upsource = {...updateResource};
     console.log(upsource.ID);
     
-    this.contactsService.updateContact(upsource.ID,upsource).subscribe(
+    this.contactsService.fresh.updateContact(upsource.ID,upsource).subscribe(
       (data)=>{
+        this.contactsService.fresh.getContacts().subscribe(
+          (data)=>{
+            this.contactList = data;
+          });
         console.log(data);
       });
   }
   deleteContact(updateResource: any){
-    this.contactsService.deleteContact(updateResource.ID).subscribe(
+    this.contactsService.fresh.deleteContact(updateResource.ID).subscribe(
+
       (data)=>{
+        this.contactsService.fresh.getContacts().subscribe(
+          (data)=>{
+            this.contactList = data;
+          });
         console.log(data);
       });
   }

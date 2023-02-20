@@ -160,4 +160,4 @@ HttpClient DELETE Method options
 6. Call the method to make the HTTP request
 
 
-<img src="./src/assets/images/finalproject.png"">
+<img src="./src/assets/images/finalproject.png">
